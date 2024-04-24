@@ -1,5 +1,5 @@
 {
-  "homepage": "https://br-jayanth.github.io/to-do-list/",
+  "homepage": "https://br-jayanth.github.io/To-do-list/",
   "name": "to-do-list",
   "version": "0.1.0",
   "private": "false",
@@ -16,7 +16,6 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-   
     "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
