@@ -3,7 +3,7 @@ import '../css/TodoItems.css'
 import cross from './cross.png'
 import tick from './tick.png'
 import not_tick from './not_tick.png'
-import Todo from './Todo'
+
 
 
 export default function TodoItems({ no, text, display, setTodos }) {
