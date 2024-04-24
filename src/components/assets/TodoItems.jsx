@@ -20,7 +20,7 @@ export default function TodoItems({ no, text, display, setTodos }) {
     const toggle = (no) => {
         let data = JSON.parse(localStorage.getItem("todos"));
         data.map((val) => {
-            if (val.no == no) {
+            if (val.no === no) {
                 val.display = !val.display;
             }
 
