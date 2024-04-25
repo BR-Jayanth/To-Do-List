@@ -2,13 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react'
 import Todo from './components/assets/Todo';
+import { Route, Routes } from 'react-router-dom';
 
 
 
 function App() {
   return (
     <React.Fragment>
-      <Todo/>
+
+      <Routes>
+        <Route path='/' element={<Todo/>}/>
+      </Routes>
+      
     </React.Fragment>
   );
 }
