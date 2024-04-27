@@ -19,7 +19,7 @@ export default function Todo() {
     useEffect(() => {
         setTodos(JSON.parse(localStorage.getItem("todos")));
         setCount(JSON.parse(localStorage.getItem("count")));
-        c=JSON.parse(localStorage.getItem("count"));
+        c=localStorage.getItem("count");
     }, [])
     
     // useEffect(() => {
