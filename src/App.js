@@ -10,10 +10,10 @@ function App() {
   return (
     <React.Fragment>
 
-      <Routes>
+      {/* <Routes>
         <Route path='/' element={<Todo/>}/>
-      </Routes>
-      
+      </Routes> */}
+      <Todo/>
     </React.Fragment>
   );
 }

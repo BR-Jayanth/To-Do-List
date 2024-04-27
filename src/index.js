@@ -8,11 +8,11 @@ import {BrowserRouter} from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
     {/* <BrowserRouter basename="/To-do-List"> */}
     {/* <BrowserRouter basename={"/To-do-List"}> */}
     <App />
-    </BrowserRouter>
+    {/* </BrowserRouter> */}
   </React.StrictMode>
 );
 
