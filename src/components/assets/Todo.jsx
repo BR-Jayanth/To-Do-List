@@ -3,38 +3,30 @@ import '../css/Todo.css'
 import TodoItems from './TodoItems';
 import { useEffect } from 'react';
 
-let c = 0;
+
 export default function Todo() {
     let [count, setCount] = useState(0);
     const [todos, setTodos] = useState([]);
     const inputref = useRef(null);
 
     const Add = (e) => {
-        c = JSON.parse(localStorage.getItem("count"));
-        setTodos([...todos, { no: c++, text: inputref.current.value, display: false }]);
+        setTodos([...todos, { no: count++, text: inputref.current.value, display: false }]);
         inputref.current.value = null;
-        setCount(c);
+        setCount(count);
     }
-
-    useEffect(() => {
-        setTodos(JSON.parse(localStorage.getItem("todos")));
-        setCount(JSON.parse(localStorage.getItem("count")));
-        c=localStorage.getItem("count");
-    }, [])
     
-    // useEffect(() => {
-    //      // to avoid setting items to null on refresh
-    //     //  if the local storage already has values then it will be loaded with it otherwise it loaded with empty { } and 0
-    //     if(JSON.parse(localStorage.getItem("todos")).length !== 0 ){
-    //         setTodos(JSON.parse(localStorage.getItem("todos")));
-    //         setCount(JSON.parse(localStorage.getItem("count")));
-    //     }else{
-    //         setTodos(JSON.parse(localStorage.getItem("todos")));
-    //         setCount(JSON.parse(0));
-    //         c=JSON.parse(localStorage.getItem("count"));
-    //     }
+    useEffect(() => {
+         // to avoid setting items to null on refresh
+        //  if the local storage already has values then it will be loaded with it otherwise it loaded with empty { } and 0
+        if(JSON.parse(localStorage.getItem("todos")).length !== 0 ){
+            setTodos(JSON.parse(localStorage.getItem("todos")));
+            setCount(JSON.parse(localStorage.getItem("count")));
+        }else{
+            setTodos(JSON.parse(localStorage.getItem("todos")));
+            setCount(JSON.parse(0));
+        }
 
-    // }, [])
+    }, [])
 
     useEffect(() => {
         // storing values to local storage for every 100 milisecon on change on  todo using button click add
