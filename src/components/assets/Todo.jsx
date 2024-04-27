@@ -16,8 +16,16 @@ export default function Todo() {
     }
 
     useEffect(() => {
-        setTodos(JSON.parse(localStorage.getItem("todos")));
-        setCount(JSON.parse(localStorage.getItem("count")));
+        // to avoid setting items to null on refresh
+        //  if the local storage already has values then it will be loaded with it otherwise it loaded with empty { } and 0
+        if (JSON.parse(localStorage.getItem("todos")).length === 0) {
+            setTodos(JSON.parse(localStorage.getItem("todos")));
+            setCount(0);
+        } else {
+            setTodos(JSON.parse(localStorage.getItem("todos")));
+            setCount(JSON.parse(localStorage.getItem("count")));
+        }
+
     }, [])
     // useEffect(() => {
     //     // to avoid setting items to null on refresh
