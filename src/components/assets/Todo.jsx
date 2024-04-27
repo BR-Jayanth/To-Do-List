@@ -16,24 +16,25 @@ export default function Todo() {
         setCount(c);
     }
 
-    // useEffect(() => {
-    //     setTodos(JSON.parse(localStorage.getItem("todos")));
-    //     setCount(JSON.parse(localStorage.getItem("count")));
-    // }, [])
-    
     useEffect(() => {
-         // to avoid setting items to null on refresh
-        //  if the local storage already has values then it will be loaded with it otherwise it loaded with empty { } and 0
-        if(JSON.parse(localStorage.getItem("todos")).length !== 0 ){
-            setTodos(JSON.parse(localStorage.getItem("todos")));
-            setCount(JSON.parse(localStorage.getItem("count")));
-        }else{
-            setTodos(JSON.parse(localStorage.getItem("todos")));
-            setCount(JSON.parse(0));
-            c=JSON.parse(localStorage.getItem("count"));
-        }
-
+        setTodos(JSON.parse(localStorage.getItem("todos")));
+        setCount(JSON.parse(localStorage.getItem("count")));
+        c=JSON.parse(localStorage.getItem("count"));
     }, [])
+    
+    // useEffect(() => {
+    //      // to avoid setting items to null on refresh
+    //     //  if the local storage already has values then it will be loaded with it otherwise it loaded with empty { } and 0
+    //     if(JSON.parse(localStorage.getItem("todos")).length !== 0 ){
+    //         setTodos(JSON.parse(localStorage.getItem("todos")));
+    //         setCount(JSON.parse(localStorage.getItem("count")));
+    //     }else{
+    //         setTodos(JSON.parse(localStorage.getItem("todos")));
+    //         setCount(JSON.parse(0));
+    //         c=JSON.parse(localStorage.getItem("count"));
+    //     }
+
+    // }, [])
 
     useEffect(() => {
         // storing values to local storage for every 100 milisecon on change on  todo using button click add
