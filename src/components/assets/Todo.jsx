@@ -30,7 +30,7 @@ export default function Todo() {
         }else{
             setTodos(JSON.parse(localStorage.getItem("todos")));
             setCount(JSON.parse(0));
-            c=0;
+            c=JSON.parse(localStorage.getItem("count"));
         }
 
     }, [])
