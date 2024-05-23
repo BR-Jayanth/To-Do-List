@@ -18,10 +18,10 @@ export default function Todo() {
     useEffect(() => {
         // to avoid setting items to null on refresh
         //  if the local storage already has values then it will be loaded with it otherwise it loaded with empty { } and 0
-        if (JSON.parse(localStorage.getItem("todos")) ) {
+        if (JSON.parse(localStorage.getItem("todos"))) {
             setTodos(JSON.parse(localStorage.getItem("todos")));
             setCount(JSON.parse(localStorage.getItem("count")));
-            
+
         } else {
             setTodos(JSON.parse(localStorage.getItem("todos")));
             setCount(0);
@@ -47,7 +47,7 @@ export default function Todo() {
                 <div className="todo-add-btn" onClick={Add}> ADD </div>
             </div>
             <div className="todo-list">
-                {
+                {todos &&
                     todos.map((item, index) => {
                         return <TodoItems key={index} no={item.no} text={item.text} display={item.display} setTodos={setTodos} />
                     })
